@@ -6,18 +6,23 @@ import Album from './pages/Album';
 import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
+import NotFound from './pages/NotFound';
+import { Switch } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
-    return (
-      <>
-        <Route path="/" component={ Login } exact />
-        <Route path="/search" component={ Search } exact />
-        <Route path="/album/:id" component={ Album } exact />
-        <Route path="/favorites" component={ Favorites } exact />
-        <Route path="/profile" component={ Profile } exact />
-        <Route path="/profile/edit" component={ ProfileEdit } exact />
-      </>
+    return (      
+        <>
+          <Switch>
+            <Route path="/" component={ Login } exact />
+            <Route path="/search" component={ Search }  />
+            <Route path="/album/:id" component={ Album }  />
+            <Route path="/favorites" component={ Favorites } />
+            <Route path="/profile" component={ Profile } />
+            <Route path="/profile/edit" component={ ProfileEdit } />
+            <Route path="*" component={ NotFound } />
+          </Switch>
+        </>
     );
   }
 }
