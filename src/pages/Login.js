@@ -9,12 +9,24 @@ class Login extends React.Component {
     this.sendUser = this.sendUser.bind(this);
     this.state = {
       name: '',
+      buttonDisabled: true,
     };
   }
 
   handleInputChange({ target }) {
     const { value } = target;
-    this.setState({ name: value });
+    this.setState({ name: value }, () => this.validate());
+  }
+
+  validate = () => {
+    const { name } = this.state;
+    const minlength = 3;
+    const validation = name.length >= minlength;
+    if (validation) {
+      this.setState({ buttonDisabled: false });
+    } else {
+      this.setState({ buttonDisabled: true });
+    }
   }
 
   sendUser() {
@@ -24,7 +36,7 @@ class Login extends React.Component {
   }
 
   render() {
-    const { name } = this.state;
+    const { name, buttonDisabled } = this.state;
 
     return (
       <div data-testid="page-login">
@@ -41,6 +53,7 @@ class Login extends React.Component {
           type="button"
           data-testid="login-submit-button"
           onClick={ this.sendUser }
+          disabled={ buttonDisabled }
         >
           Entrar
         </button>
