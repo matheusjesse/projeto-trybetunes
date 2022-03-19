@@ -1,5 +1,7 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
+import Load from './Load';
 // import { createUser } from '../services/userAPI';
 
 class Login extends React.Component {
@@ -10,6 +12,8 @@ class Login extends React.Component {
     this.state = {
       name: '',
       buttonDisabled: true,
+      loading: false,
+      redirect: false,
     };
   }
 
@@ -31,32 +35,48 @@ class Login extends React.Component {
 
   sendUser() {
     const { name } = this.state;
-    createUser({ name });
-    console.log(name);
+    this.setState({
+      loading: true,
+    }, async () => {
+      await createUser({ name });
+      this.setState({
+        loading: false,
+        redirect: true,
+      });
+    });
   }
 
   render() {
-    const { name, buttonDisabled } = this.state;
+    const { name, buttonDisabled, loading, redirect } = this.state;
 
     return (
       <div data-testid="page-login">
-        <label htmlFor="name">
-          <input
-            type="text"
-            id="name"
-            data-testid="login-name-input"
-            onChange={ this.handleInputChange }
-            value={ name }
-          />
-        </label>
-        <button
-          type="button"
-          data-testid="login-submit-button"
-          onClick={ this.sendUser }
-          disabled={ buttonDisabled }
-        >
-          Entrar
-        </button>
+        {
+          loading ? <Load /> : (
+            <form>
+              <label htmlFor="name">
+                <input
+                  type="text"
+                  id="name"
+                  data-testid="login-name-input"
+                  onChange={ this.handleInputChange }
+                  value={ name }
+                />
+              </label>
+              <button
+                type="button"
+                data-testid="login-submit-button"
+                onClick={ this.sendUser }
+                disabled={ buttonDisabled }
+              >
+                Entrar
+              </button>
+            </form>
+          )
+        }
+        {
+          redirect ? <Redirect to="/search" /> : ''
+        }
       </div>
     );
   }
