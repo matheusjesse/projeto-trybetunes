@@ -26,7 +26,7 @@ class Header extends React.Component {
 
         { userData === '' ? <Load />
           : (
-            <p>{ userData }</p>)}
+            <p data-testid="header-user-name">{ userData }</p>)}
       </header>
     );
   }
