@@ -73,7 +73,7 @@ class Search extends React.Component {
             ? albums.map((album) => (
               <AlbumsCard
                 key={ album.collectionName }
-                artworkUrl100={ album.artworkUrl100 }
+                artWorkUrl100={ album.artworkUrl100 }
                 collectionName={ album.collectionName }
                 artistName={ album.artistName }
                 collectionId={ album.collectionId }
