@@ -5,8 +5,8 @@ import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
 
 class Album extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       albumSelected: [],
       artistName: '',
@@ -43,6 +43,9 @@ class Album extends React.Component {
                 key={ music.trackId }
                 musicName={ music.trackName }
                 musicUrl={ music.previewUrl }
+                trackId={ music.trackId }
+                music={ music }
+
               />))
           }
         </div>
