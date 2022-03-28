@@ -71,7 +71,7 @@ MusicCard.propTypes = {
   musicUrl: PropTypes.string.isRequired,
   musicName: PropTypes.string.isRequired,
   trackId: PropTypes.number.isRequired,
-  music: PropTypes.arrayOf(PropTypes.object).isRequired,
+  music: PropTypes.object.isRequired,
 };
 
 export default MusicCard;
