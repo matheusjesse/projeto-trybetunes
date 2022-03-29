@@ -5,11 +5,10 @@ import { getUser } from '../services/userAPI';
 
 class Profile extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      load: false,
       userInfo: {},
-    }
+    };
   }
 
   async componentDidMount() {
@@ -27,10 +26,10 @@ class Profile extends React.Component {
         <Header />
         <Link to="/profile/edit">Editar perfil</Link>
         <div data-testid="page-profile">
-          <img src={image} data-testid="profile-image" alt={name} />
+          <img src={ image } data-testid="profile-image" alt={ name } />
           <h1>{ name }</h1>
           <h2>{ email }</h2>
-          <p>{ description } </p>
+          <p>{ description }</p>
         </div>
       </>
     );

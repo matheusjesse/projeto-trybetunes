@@ -68,10 +68,10 @@ class MusicCard extends React.Component {
 }
 
 MusicCard.propTypes = {
-  musicUrl: PropTypes.string.isRequired,
-  musicName: PropTypes.string.isRequired,
-  trackId: PropTypes.number.isRequired,
-  music: PropTypes.object.isRequired,
-};
+  musicUrl: PropTypes.string,
+  musicName: PropTypes.string,
+  trackId: PropTypes.number,
+  music: PropTypes.object,
+}.isRequired;
 
 export default MusicCard;
