@@ -4,8 +4,8 @@ import Load from '../pages/Load';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       load: false,
       favoriteCheckMusic: false,
@@ -32,7 +32,10 @@ class MusicCard extends React.Component {
         await addSong(music);
       } else if (!checked) {
         await removeSong(music);
-        callBack();
+        // recebi ajuda do stack overFlow pra fazer a validação do if, infelizmente perdi o link da tread.
+        if (callBack) {
+          callBack();
+        }
       }
       this.setState({
         favoriteCheckMusic: !(favoriteCheckMusic),

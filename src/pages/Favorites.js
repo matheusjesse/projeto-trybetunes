@@ -5,8 +5,8 @@ import Load from './Load';
 import MusicCard from '../components/MusicCard';
 
 class Favorites extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       load: false,
       favMusics: [],
@@ -36,12 +36,7 @@ class Favorites extends React.Component {
     });
   }
 
-  gettingLocalStorageUpdate() {
-    const favStorage = JSON.parse(window.localStorage.getItem('favorite_songs'));
-    console.log(favStorage);
-  }
-
-  upddateFavMusicList = () => {
+  updDateFavMusicList = () => {
     this.setState({
       favMusics: JSON.parse(window.localStorage.getItem('favorite_songs')),
     });
@@ -61,7 +56,7 @@ class Favorites extends React.Component {
                 musicUrl={ musics.previewUrl }
                 trackId={ musics.trackId }
                 music={ musics }
-                callBack={ this.upddateFavMusicList }
+                callBack={ this.updDateFavMusicList }
               />
             ))
           }
