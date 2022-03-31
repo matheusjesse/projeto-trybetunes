@@ -22,7 +22,7 @@ class MusicCard extends React.Component {
 
   handleChange = (event) => {
     const { checked } = event.target;
-    const { music } = this.props;
+    const { music, callBack } = this.props;
     const { favoriteCheckMusic } = this.state;
 
     this.setState({
@@ -30,8 +30,9 @@ class MusicCard extends React.Component {
     }, async () => {
       if (checked) {
         await addSong(music);
-      } else {
+      } else if (!checked) {
         await removeSong(music);
+        callBack();
       }
       this.setState({
         favoriteCheckMusic: !(favoriteCheckMusic),
