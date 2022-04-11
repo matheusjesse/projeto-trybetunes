@@ -2,6 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Load from './Load';
+import { ContainerLogin } from '../styles/Login';
+import HeadFone from '../assets/fone2.svg';
 // import { createUser } from '../services/userAPI';
 
 class Login extends React.Component {
@@ -50,34 +52,45 @@ class Login extends React.Component {
     const { name, buttonDisabled, loading, redirect } = this.state;
 
     return (
-      <div data-testid="page-login">
-        {
-          loading ? <Load /> : (
-            <form>
-              <label htmlFor="name">
-                <input
-                  type="text"
-                  id="name"
-                  data-testid="login-name-input"
-                  onChange={ this.handleInputChange }
-                  value={ name }
+      <ContainerLogin>
+        <div data-testid="page-login">
+          {
+            loading ? <Load /> : (
+              <div className="login-container">
+                <img
+                  src={ HeadFone }
+                  alt="Blue Head-Set"
                 />
-              </label>
-              <button
-                type="button"
-                data-testid="login-submit-button"
-                onClick={ this.sendUser }
-                disabled={ buttonDisabled }
-              >
-                Entrar
-              </button>
-            </form>
-          )
-        }
-        {
-          redirect ? <Redirect to="/search" /> : ''
-        }
-      </div>
+                <h1>TrybeTunes</h1>
+                <form>
+                  <label htmlFor="name">
+                    <input
+                      type="text"
+                      id="name"
+                      data-testid="login-name-input"
+                      onChange={ this.handleInputChange }
+                      value={ name }
+                      autoComplete="off"
+                      placeholder="Nome..."
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    data-testid="login-submit-button"
+                    onClick={ this.sendUser }
+                    disabled={ buttonDisabled }
+                  >
+                    Entrar
+                  </button>
+                </form>
+              </div>
+            )
+          }
+          {
+            redirect ? <Redirect to="/search" /> : ''
+          }
+        </div>
+      </ContainerLogin>
     );
   }
 }
