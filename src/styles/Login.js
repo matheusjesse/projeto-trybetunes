@@ -2,15 +2,17 @@ import styled from 'styled-components';
 
 export const ContainerLogin = styled.div`
   
-    width: 349px;
-    height: 434px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--white);       
-    text-align: center;    
-    //
-
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  text-align: center;    
+  flex-direction: column;
+    
+    
     & button:active {
     box-shadow: none;
     }
@@ -23,6 +25,7 @@ export const ContainerLogin = styled.div`
     background-color: var(--white);      
     box-shadow: 3px 3px 5px 6px #ccc;
   }
+  
 
   form{    
     display: flex;

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Load from './Load';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import { ContainerSearch } from '../styles/Search';
 import AlbumsCard from '../components/AlbumsCard';
 
 class Search extends React.Component {
@@ -45,45 +46,49 @@ class Search extends React.Component {
     return (
       <>
         <Header />
-        {
-          loading ? <Load /> : (
-            <div data-testid="page-search">
-              <input
-                type="text"
-                id="inputAlbums"
-                data-testid="search-artist-input"
-                onChange={ this.validateButton }
-              />
-              <button
-                type="button"
-                data-testid="search-artist-button"
-                value="Search"
-                disabled={ buttonSearch }
-                onClick={ this.albumSearch }
-              >
-                Search
-              </button>
-              <div>
-                { recClick ? <p>{ `Resultado de álbuns de: ${artista}` }</p> : '' }
-              </div>
-            </div>)
-        }
-        {
-          albums.length > 0
-            ? albums.map((album) => (
-              <AlbumsCard
-                key={ album.collectionName }
-                artWorkUrl100={ album.artworkUrl100 }
-                collectionName={ album.collectionName }
-                artistName={ album.artistName }
-                collectionId={ album.collectionId }
-              />
-            )) : ''
-        }
-        {
-          albums.length === 0 && recClick === true
-            ? <p>Nenhum álbum foi encontrado</p> : ''
-        }
+        <ContainerSearch>
+          {
+            loading ? <Load /> : (
+              <div className="input-section" data-testid="page-search">
+                <input
+                  type="text"
+                  id="inputAlbums"
+                  data-testid="search-artist-input"
+                  onChange={ this.validateButton }
+                />
+                <button
+                  type="button"
+                  data-testid="search-artist-button"
+                  value="Search"
+                  disabled={ buttonSearch }
+                  onClick={ this.albumSearch }
+                >
+                  Search
+                </button>
+                <div>
+                  { recClick ? <p>{ `Resultado de álbuns de: ${artista}` }</p> : '' }
+                </div>
+              </div>)
+          }
+          {
+            <div>
+              {albums.length > 0
+                ? albums.map((album) => (
+                  <AlbumsCard
+                    key={ album.collectionName }
+                    artWorkUrl100={ album.artworkUrl100 }
+                    collectionName={ album.collectionName }
+                    artistName={ album.artistName }
+                    collectionId={ album.collectionId }
+                  />
+                )) : ''}
+            </div>
+          }
+          {
+            albums.length === 0 && recClick === true
+              ? <p>Nenhum álbum foi encontrado</p> : ''
+          }
+        </ContainerSearch>
       </>
     );
   }
