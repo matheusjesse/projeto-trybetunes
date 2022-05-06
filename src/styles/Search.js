@@ -13,9 +13,21 @@ export const ContainerSearch = styled.div`
     width: 400px;
     height: 48px;
     margin: 15px 10px 15px 15px;
-    border: 1px solid var(--blue);
+    border: 2px solid var(--dark);
     border-radius: 10px;
-  }  
+    background-color: var(--gray);
+    font-size: 25px;
+    color: var(--white);
+    padding: 0px 10px 0px 10px;
+  }
+
+  input:hover {    
+    border: 2px solid var(--blue);
+  }
+
+  input:focus {
+    outline: none;
+  }
 
   button {
     width: 170px;
