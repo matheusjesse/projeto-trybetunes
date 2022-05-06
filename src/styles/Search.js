@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const ContainerSearch = styled.div`
   background-color: var(--white);
-  width: 100vw;
-  height: 100vh;
+  width: 100vw;  
+  min-height: 100vh;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -33,6 +33,14 @@ export const ContainerSearch = styled.div`
     display: flex;
     align-items: center;    
   }
+
+  .card-container{
+    width: 100%;    
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+   
 
 `;
 

@@ -71,7 +71,7 @@ class Search extends React.Component {
               </div>)
           }
           {
-            <div>
+            <div className="card-container">
               {albums.length > 0
                 ? albums.map((album) => (
                   <AlbumsCard
