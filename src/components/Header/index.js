@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Load from '../../pages/Load';
 import { getUser } from '../../services/userAPI';
+import HeadFone from '../../assets/fone2.svg';
 import HeaderContainer from './styles';
 
 class Header extends React.Component {
@@ -35,7 +36,11 @@ class Header extends React.Component {
             <HeaderContainer data-testid="header-component">
               <div className="header-top">
                 <div className="logo-image">
-                  <p>LOGO</p>
+                  <img
+                    src={ HeadFone }
+                    alt="Blue Head-Set"
+                  />
+                  <p>TrybeTunes</p>
                 </div>
                 <div className="user-data">
                   <p data-testid="header-user-name">{ userData }</p>

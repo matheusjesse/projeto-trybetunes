@@ -14,6 +14,7 @@ const HeaderContainer = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0px 30px 0px 30px;
   }
 
   .links-list {
@@ -30,6 +31,35 @@ const HeaderContainer = styled.header`
     color: var(--dark);
     font-size: 30px;
     font-family: 'Ubuntu Mono', monospace;
+  }
+
+  .user-data {
+    font-size: 35px;
+    color: var(--white);
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--white);
+    border-radius: 30px;
+  }
+
+  .logo-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 38px;
+  }
+  
+  .logo-image img {
+    width: 85px;
+    background-color: var(--white);
+    border: 3px solid var(--dark-blue);
+    border-radius: 50%;
+    padding: 5px 0px 0px 7px;
+    margin-right: 24px;
   }
 
 `;
