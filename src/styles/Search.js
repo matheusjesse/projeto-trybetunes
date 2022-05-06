@@ -6,8 +6,7 @@ export const ContainerSearch = styled.div`
   min-height: 100vh;
   display: flex;
   justify-content: flex-start;
-  flex-direction: column;
-  
+  flex-direction: column;  
   
   input {
     width: 400px;

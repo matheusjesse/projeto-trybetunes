@@ -27,10 +27,17 @@ const HeaderContainer = styled.header`
   }
 
   a {
+    display: flex;
+    align-items: center;
+    height:50px;
     text-decoration: none;
     color: var(--dark);
     font-size: 30px;
     font-family: 'Ubuntu Mono', monospace;
+  }
+
+  a:hover {
+    border-bottom: 2px solid var(--blue);
   }
 
   .user-data {
