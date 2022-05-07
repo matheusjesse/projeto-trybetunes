@@ -6,7 +6,7 @@ export const ContainerSearch = styled.div`
   min-height: 100vh;
   display: flex;
   justify-content: flex-start;
-  flex-direction: column;  
+  flex-direction: column; 
   
   input {
     width: 400px;
@@ -50,7 +50,8 @@ export const ContainerSearch = styled.div`
     display:flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-envely;
+    margin: 30px;
    
 
 `;
