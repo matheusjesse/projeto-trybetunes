@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import AlbumContainer from '../styles/Album';
 
 class Album extends React.Component {
   constructor(props) {
@@ -34,20 +35,24 @@ class Album extends React.Component {
     return (
       <>
         <Header />
-        <div data-testid="page-album">
-          <h1 data-testid="artist-name">{ artistName }</h1>
-          <h2 data-testid="album-name">{ albumName }</h2>
-          {
-            filterAlbum.map((music) => (
-              <MusicCard
-                key={ music.trackId }
-                musicName={ music.trackName }
-                musicUrl={ music.previewUrl }
-                trackId={ music.trackId }
-                music={ music }
-              />))
-          }
-        </div>
+        <AlbumContainer>
+          <div data-testid="page-album">
+            <h1 data-testid="artist-name">{ artistName }</h1>
+            <h2 data-testid="album-name">{ albumName }</h2>
+            <div className="musics-container">
+              {
+                filterAlbum.map((music) => (
+                  <MusicCard
+                    key={ music.trackId }
+                    musicName={ music.trackName }
+                    musicUrl={ music.previewUrl }
+                    trackId={ music.trackId }
+                    music={ music }
+                  />))
+              }
+            </div>
+          </div>
+        </AlbumContainer>
       </>
     );
   }

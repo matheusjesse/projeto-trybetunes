@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Load from '../pages/Load';
-import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import Load from '../../pages/Load';
+import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSongsAPI';
+import MusicCardContainer from './style';
 
 class MusicCard extends React.Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class MusicCard extends React.Component {
     const { musicUrl, musicName, trackId } = this.props;
     const { load, favoriteCheckMusic } = this.state;
     return (
-      <div>
+      <MusicCardContainer>
         <p>{ musicName }</p>
         <audio data-testid="audio-component" src={ musicUrl } controls>
           <track kind="captions" />
@@ -66,7 +67,7 @@ class MusicCard extends React.Component {
           />
         </label>
         { load ? <Load /> : '' }
-      </div>
+      </MusicCardContainer>
     );
   }
 }
