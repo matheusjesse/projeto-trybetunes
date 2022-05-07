@@ -6,7 +6,7 @@ const AlbumContainer = styled.div`
     min-height: 100vh;
     background-color: var(--white);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 
     .musics-container {
         display: flex;
