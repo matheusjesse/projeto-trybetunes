@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { getUser } from '../services/userAPI';
+import { ProfileContainer } from '../styles/Profile';
 import Load from './Load';
 
 class Profile extends React.Component {
@@ -30,15 +31,17 @@ class Profile extends React.Component {
         {
           loading ? <Load />
             : (
-              <>
-                <Link to="/profile/edit">Editar perfil</Link>
+              <ProfileContainer>
                 <div data-testid="page-profile">
-                  <img src={ image } data-testid="profile-image" alt={ name } />
-                  <h1>{ name }</h1>
-                  <h2>{ email }</h2>
-                  <p>{ description }</p>
+                  <div className="profile-card">
+                    <img src={ image } data-testid="profile-image" alt={ name } />
+                    <Link to="/profile/edit">Editar perfil</Link>
+                    <h1>{ name }</h1>
+                    <h2>{ email }</h2>
+                    <p>{ description }</p>
+                  </div>
                 </div>
-              </>
+              </ProfileContainer>
             )
         }
       </>
