@@ -7,13 +7,13 @@ const GlobalStyle = createGlobalStyle`
    --dark: #231c1c;
    --gray: #8f8888;
    --white: #faf4f4;
-
+   background-color: var(--white);
  }
 
  * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;    
   }
 
   

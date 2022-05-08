@@ -47,6 +47,7 @@ class Favorites extends React.Component {
     return (
       <>
         <Header />
+
         <div data-testid="page-favorites">
           {
             favMusics.map((musics) => (
@@ -61,6 +62,7 @@ class Favorites extends React.Component {
             ))
           }
         </div>
+
         { load && <Load /> }
       </>
     );
