@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Header from '../components/Header';
 import { getUser, updateUser } from '../services/userAPI';
 import Load from './Load';
+import PerfilEditContainer from '../styles/ProfileEdit';
 
 class ProfileEdit extends React.Component {
   constructor() {
@@ -74,59 +75,61 @@ class ProfileEdit extends React.Component {
         <Header />
         {
           loading ? <Load /> : (
-            <div data-testid="page-profile-edit">
-              <label htmlFor="input-name">
-                Name
+            <PerfilEditContainer data-testid="page-profile-edit">
+              <div className="edit-card">
+                <label htmlFor="input-name">
+                  Name
+                  <input
+                    type="text"
+                    id="input-name"
+                    data-testid="edit-input-name"
+                    name="name"
+                    value={ name }
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <label htmlFor="input-email">
+                  E-mail
+                  <input
+                    type="text"
+                    id="input-email"
+                    data-testid="edit-input-email"
+                    name="email"
+                    value={ email }
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <label htmlFor="input-description">
+                  Descição
+                  <input
+                    type="text"
+                    id="input-description"
+                    data-testid="edit-input-description"
+                    name="description"
+                    value={ description }
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <label htmlFor="input-image">
+                  Imagem URL
+                  <input
+                    type="text"
+                    id="input-image"
+                    data-testid="edit-input-image"
+                    name="image"
+                    value={ image }
+                    onChange={ this.handleChange }
+                  />
+                </label>
                 <input
-                  type="text"
-                  id="input-name"
-                  data-testid="edit-input-name"
-                  name="name"
-                  value={ name }
-                  onChange={ this.handleChange }
+                  type="button"
+                  data-testid="edit-button-save"
+                  disabled={ buttonValidate }
+                  value="Salvar"
+                  onClick={ this.editProfile }
                 />
-              </label>
-              <label htmlFor="input-email">
-                E-mail
-                <input
-                  type="text"
-                  id="input-email"
-                  data-testid="edit-input-email"
-                  name="email"
-                  value={ email }
-                  onChange={ this.handleChange }
-                />
-              </label>
-              <label htmlFor="input-description">
-                Descição
-                <input
-                  type="text"
-                  id="input-description"
-                  data-testid="edit-input-description"
-                  name="description"
-                  value={ description }
-                  onChange={ this.handleChange }
-                />
-              </label>
-              <label htmlFor="input-image">
-                Imagem URL
-                <input
-                  type="text"
-                  id="input-image"
-                  data-testid="edit-input-image"
-                  name="image"
-                  value={ image }
-                  onChange={ this.handleChange }
-                />
-              </label>
-              <input
-                type="button"
-                data-testid="edit-button-save"
-                disabled={ buttonValidate }
-                value="Salvar"
-                onClick={ this.editProfile }
-              />
-            </div>
+              </div>
+            </PerfilEditContainer>
           )
         }
         {

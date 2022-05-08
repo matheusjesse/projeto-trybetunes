@@ -19,7 +19,7 @@ export const ProfileContainer = styled.div`
         border-radius: 10px;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: wrap;        
         justify-content: flex-start;
     }
 
