@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Header from '../components/Header';
 import { getUser, updateUser } from '../services/userAPI';
 import Load from './Load';
-import PerfilEditContainer from '../styles/ProfileEdit';
+import { PerfilEditContainer } from '../styles/ProfileEdit';
 
 class ProfileEdit extends React.Component {
   constructor() {
@@ -75,7 +75,7 @@ class ProfileEdit extends React.Component {
         <Header />
         {
           loading ? <Load /> : (
-            <PerfilEditContainer data-testid="page-profile-edit">
+            <PerfilEditContainer>
               <div className="edit-card">
                 <label htmlFor="input-name">
                   Name

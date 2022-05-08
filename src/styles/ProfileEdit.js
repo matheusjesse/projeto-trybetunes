@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const PerfilEditContainer = styled.div`
+
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 80px;
+    
     .edit-card {
         padding-top: 50px;
         width: 349px;
@@ -63,9 +65,7 @@ export const PerfilEditContainer = styled.div`
     input[type=button]:disabled {
         background-color: var(--dark);
         color: var(--white);
-    }
-
-    
+    }   
 
 `;
 
