@@ -14,7 +14,11 @@ class AlbumsCard extends React.Component {
         >
           <img src={ artWorkUrl100 } alt={ collectionName } />
           <div className="text-card-container">
-            <h2>{ collectionName }</h2>
+            <h2>
+                { 
+                  collectionName.length > 48 ? collectionName.substring(0, 50).concat('...') : collectionName
+                }      
+            </h2>
             <p>{ artistName }</p>
           </div>
         </Link>
