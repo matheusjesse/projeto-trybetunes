@@ -50,7 +50,7 @@ class MusicCard extends React.Component {
     const { load, favoriteCheckMusic } = this.state;
     return (
       <MusicCardContainer>
-        <p>{ musicName }</p>
+        <p>{ musicName.length > 48 ? musicName.substring(0, 50).concat('...') : musicName }</p>
         <audio data-testid="audio-component" src={ musicUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
