@@ -25,6 +25,11 @@ const AlbumContainer = styled.div`
         font-size: 3em;
     }
 
+    @media only screen and (max-width: 500px) { 
+        h1 {
+            font-size: 2em;
+        }
+    }
 
 `;
 
