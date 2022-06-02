@@ -42,6 +42,14 @@ const AlbumCardContainer = styled.div`
     // overflow: hidden;
     // text-overflow: ellipsis;
   }
+
+  @media only screen and (max-width: 500px) { 
+    width: 360px;
+    a {
+      width: 360px;  
+    }
+    
+  }
 `;
 
 export default AlbumCardContainer;
