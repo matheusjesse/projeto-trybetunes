@@ -65,7 +65,11 @@ export const PerfilEditContainer = styled.div`
     input[type=button]:disabled {
         background-color: var(--dark);
         color: var(--white);
-    }   
+    }
+
+    @media only screen and (max-width: 500px) { 
+        margin-top: 40px;
+    }
 
 `;
 
