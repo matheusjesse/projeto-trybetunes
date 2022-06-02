@@ -91,6 +91,25 @@ export const ContainerLogin = styled.div`
     border: none;
     background-color: var(--dark);
   }
+
+  @media only screen and (max-width: 500px) {
+
+    .login-container {
+      padding-top: 20px;
+      width: 349px;
+      height: 434px;
+      border-radius: 22px;
+      background-color: var(--white); 
+      box-shadow: none;
+    }
+
+    button {
+      margin-top: 16px; 
+      border-radius: 6px;
+      width: 316px
+    }
+
+  }
   
 `;
 
