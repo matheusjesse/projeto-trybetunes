@@ -21,7 +21,7 @@ export const ContainerSearch = styled.div`
   }
 
   input:hover {    
-    border: 2px solid var(--blue);
+    border: 2px solid var(--blue);    
   }
 
   input:focus {
@@ -52,7 +52,26 @@ export const ContainerSearch = styled.div`
     align-items: center;
     justify-content: space-envely;
     margin: 30px;
-   
+  }
+  
+  @media only screen and (max-width: 500px) { 
+
+      div.input-section { 
+        flex-wrap: wrap;
+        margin: 0px 8px 0px 8px;
+      }
+
+      input {
+        width: 246px;
+        height: 40px;
+        margin: 15px 10px 15px 0px;
+      }
+
+      button {
+        width: 124px;
+        height: 40px;
+      }
+    }  
 
 `;
 
