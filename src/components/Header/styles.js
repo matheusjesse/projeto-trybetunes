@@ -69,6 +69,36 @@ const HeaderContainer = styled.header`
     margin-right: 24px;
   }
 
+  @media only screen and (max-width: 500px) {
+
+    .header-top{
+      height: 110px;
+      background-color: var(--dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 4px 0px 4px;
+    }
+    
+    .logo-image {
+      font-size: 24px;      
+    }
+
+    .logo-image img {    
+      width: 60px;  
+      padding: 5px 0px 0px 4px;   
+      margin-right: 8px;   
+    }
+
+    .user-data {
+      font-size: 24px;      
+      width: 180px;
+      height: 44px;
+      padding-bottom: 2px;
+    }
+
+  }
+
 `;
 
 export default HeaderContainer;
