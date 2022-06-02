@@ -51,6 +51,14 @@ export const ProfileContainer = styled.div`
     h2 {
         font-size: 1.4em;
     }
+
+    @media only screen and (max-width: 500px) { 
+        margin-top: 40px;
+
+        p {
+            width: 300px;
+        }
+    }
 `;
 
 export default ProfileContainer;
