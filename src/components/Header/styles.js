@@ -97,6 +97,11 @@ const HeaderContainer = styled.header`
       padding-bottom: 2px;
     }
 
+    a {
+      font-size: 24px;
+      height:30px;
+    }
+    
   }
 
 `;
