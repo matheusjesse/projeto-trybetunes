@@ -18,6 +18,8 @@ Screen size para vizualização do app 414 X 896 - Iphone 11 Pro Max
 
 Extenção do Google Chrome para visualizar o APP nas dimensões do celular [Mobile Simulator](https://chrome.google.com/webstore/detail/mobile-simulator-responsi/ckejmhbmlajgoklhgbapkiccekfoccmk)
 
+Link do Projeto: https://matheusjesse.github.io/projeto-trybetunes/
+
 #### Instalação com npm
 
 ```bash
